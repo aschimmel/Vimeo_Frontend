@@ -1,0 +1,137 @@
+.slider {
+  min-height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.arrow {
+  color: white;
+  position: absolute;
+  transform: scale(2.0);
+}
+
+.next {
+  right: 20px;
+  top: 25vh;
+}
+
+.next:after {
+  content: '>';
+}
+
+.prev {
+  left: 20px;
+  top: 25vh;
+}
+
+.prev:after {
+  content: '<';
+}
+
+.slide {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: left;
+}
+
+.slide a {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  margin: auto;
+}
+
+.slide .image {
+  flex-basis: 33%;
+  margin: auto 5%;
+}
+
+.slide .image img {
+  width: 100%;
+  height: auto;
+}
+
+.slide .text {
+  color: white;
+  margin: auto 5% auto 0;
+}
+
+.slide .text a {
+  color: white;
+}
+
+.leave {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.enter-active.enter-next, .enter-active.enter-prev {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+}
+
+.enter-next {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.enter-prev {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+  ;
+}
+
+.leave-active-next {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+}
+
+.leave.leave-active-prev {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+}
+
+@media screen and (max-width: 800px) {
+  .slide .content {
+    display: block;
+    text-align: center;
+  }
+  .slide .content .image {
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+  }
+  .slide .content .text {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .slide .content .image {
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+}
