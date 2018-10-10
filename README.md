@@ -33,4 +33,12 @@ npm install
  npm start
  ```
 
+### Deployment
+
+Generate a build folder and upload the contents into any web server.
+
+```
+npm run build
+```
+
 I hope you like what you see and look forward to speaking with you!
