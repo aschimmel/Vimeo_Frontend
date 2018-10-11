@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Slide from './Slide';
 import '../styles/Slider.css';
+const transitionSpeed = 500;
+
 class Slider extends Component {
 
   constructor(props) {
@@ -11,6 +13,9 @@ class Slider extends Component {
       active: null,
       next: true
     };
+
+    this.next = this.next.bind(this);
+    this.prev = this.prev.bind(this);
   }
 
   componentWillMount() {
@@ -21,7 +26,7 @@ class Slider extends Component {
     this.setState({
       next: next,
       activeIndex: index,
-    }, ()=>{
+    }, () => {
       this.setState({
         active: <Slide key={this.state.activeIndex} data={this.props.slides[this.state.activeIndex]} />
       })
@@ -40,20 +45,20 @@ class Slider extends Component {
 
     return (
       <div className="slider" >
-          <ReactCSSTransitionGroup
-            transitionName={{
-              enter: this.state.next ? 'enter-next' : 'enter-prev',
-              enterActive: 'enter-active',
-              leave: 'leave',
-              leaveActive: this.state.next ? 'leave-active-next' : 'leave-active-prev'
-            }}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
-            {this.state.active}
-          </ReactCSSTransitionGroup>
-          <div className="arrow prev" onClick={() => this.prev()} />
+        <ReactCSSTransitionGroup
+          transitionName={{
+            enter: this.state.next ? 'enter-next' : 'enter-prev',
+            enterActive: 'enter-active',
+            leave: 'leave',
+            leaveActive: this.state.next ? 'leave-active-next' : 'leave-active-prev'
+          }}
+          transitionEnterTimeout={transitionSpeed}
+          transitionLeaveTimeout={transitionSpeed}>
+          {this.state.active}
+        </ReactCSSTransitionGroup>
+        <div className="arrow prev" onClick={this.prev} />
 
-        <div className="arrow next" onClick={() => this.next()} />
+        <div className="arrow next" onClick={this.next} />
       </div>
     );
   }

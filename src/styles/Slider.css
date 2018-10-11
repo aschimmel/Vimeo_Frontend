@@ -3,17 +3,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
 .arrow {
   color: white;
   position: absolute;
-  transform: scale(2.0);
+  top: 50%;
+  transform: translateY(-50%) scale(2.0);
 }
 
 .next {
   right: 20px;
-  top: 25vh;
 }
 
 .next:after {
@@ -22,7 +23,6 @@
 
 .prev {
   left: 20px;
-  top: 25vh;
 }
 
 .prev:after {
@@ -92,17 +92,13 @@
 }
 
 .enter-prev {
-  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  transition: -webkit-transform 500ms linear;
   transition: transform 500ms linear;
   ;
 }
 
 .leave-active-next {
-  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  transition: -webkit-transform 500ms linear;
   transition: transform 500ms linear;
 }
 
