@@ -1,6 +1,6 @@
 # Alec Schimmel Vimeo Frontend Internship Code Challenge
 
-Hi! Thank you for considering me for this position. I hope you like what I have created.
+Hi! Thank you for considering me for this position. I hope you like what I have created!
 
 ## Getting Started
 
